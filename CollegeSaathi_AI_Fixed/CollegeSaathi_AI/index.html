@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CollegeSaathi AI</title>
+<script>(function(){var t;try{t=localStorage.getItem("cs_theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})()</script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fff;--bg2:#f6f5ff;--card:#fff;--tx:#14122b;--mut:#6b6a85;--bd:#e7e5f5;--ac:#5b3df5;--ac2:#8b5cf6;--soft:#efeaff;--ok:#12805c;--warn:#b45309;--rd:#be123c;--on:#fff;--dm:#fff3d6;--dmt:#8a5a00;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--on:#0d0c1d;--dm:#3a2f08;--dmt:#fbbf24;--bg:#0d0c1d;--bg2:#141330;--card:#17163a;--tx:#f1f0ff;--mut:#a09fc4;--bd:#2a2858;--ac:#8b7bff;--ac2:#b197fc;--soft:#231f55;--ok:#4ade80;--warn:#fbbf24;--rd:#fb7185;color-scheme:dark}}
+:root[data-theme="dark"]{--on:#0d0c1d;--dm:#3a2f08;--dmt:#fbbf24;--bg:#0d0c1d;--bg2:#141330;--card:#17163a;--tx:#f1f0ff;--mut:#a09fc4;--bd:#2a2858;--ac:#8b7bff;--ac2:#b197fc;--soft:#231f55;--ok:#4ade80;--warn:#fbbf24;--rd:#fb7185;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}html.theming,html.theming *,html.theming *::before,html.theming *::after{transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease!important}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--ac)}button,input,select{font:inherit;color:inherit}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:6px;padding:10px 20px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);overflow-x:auto}
+.logo{font-weight:800;font-size:18px;margin-right:12px;white-space:nowrap;text-decoration:none;color:var(--tx)}.logo b{background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;color:transparent}
+nav a.l{padding:7px 12px;border-radius:10px;text-decoration:none;color:var(--mut);white-space:nowrap;font-weight:500}nav a.l.on,nav a.l:hover{background:var(--soft);color:var(--ac)}
+.sp{flex:1}.ib{border:1px solid var(--bd);background:var(--card);border-radius:10px;padding:7px 11px;cursor:pointer}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 60px;animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+h1{font-size:clamp(32px,6vw,56px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px}h2{font-size:24px;letter-spacing:-.02em;margin:34px 0 14px}h3{margin:0 0 4px}
+.hero{text-align:center;padding:44px 8px 20px;background:radial-gradient(60% 60% at 50% 0,var(--soft),transparent)}.hero h1 span{background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:560px;margin:0 auto 24px;font-size:17px}
+.sb{display:flex;gap:8px;max-width:640px;margin:0 auto;padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 10px 40px -12px rgba(91,61,245,.35)}
+.sb input{flex:1;border:0;background:none;outline:0;padding:8px 10px;min-width:0}
+.btn{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);border:0;border-radius:12px;padding:10px 18px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}.btn.g{background:var(--soft);color:var(--ac)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}.chip{border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:6px 13px;font-size:13px;color:var(--mut);cursor:pointer}.chip:hover,.chip.on{border-color:var(--ac);color:var(--ac);background:var(--soft)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;transition:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px -14px rgba(91,61,245,.4)}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;background:var(--soft);color:var(--ac);margin:2px 4px 2px 0}.demo{background:var(--dm);color:var(--dmt)}
+.mut{color:var(--mut);font-size:13px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.steps{counter-reset:s}.steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--soft);color:var(--ac);font-weight:700;margin-bottom:10px}
+footer{border-top:1px solid var(--bd);padding:26px 20px;text-align:center;color:var(--mut);font-size:13px}
+.layout{display:grid;grid-template-columns:240px 1fr;gap:18px;min-height:60vh}@media(max-width:760px){.layout{grid-template-columns:1fr}}
+.side{display:flex;flex-direction:column;gap:6px}.side .it{padding:9px 12px;border-radius:10px;cursor:pointer;font-size:14px;color:var(--mut)}.side .it.on,.side .it:hover{background:var(--soft);color:var(--ac)}
+.chat{display:flex;flex-direction:column;border:1px solid var(--bd);border-radius:20px;background:var(--bg2);min-height:60vh}.msgs{flex:1;padding:18px;display:flex;flex-direction:column;gap:12px;overflow:auto;max-height:62vh}
+.m{max-width:85%;padding:11px 15px;border-radius:16px;animation:in .25s}.m.u{align-self:flex-end;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);border-bottom-right-radius:4px}.m.a{background:var(--card);border:1px solid var(--bd);border-bottom-left-radius:4px}
+.dots span{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%;background:var(--ac);animation:b 1s infinite}.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}@keyframes b{50%{transform:translateY(-5px);opacity:.4}}
+.cite{font-size:12px;color:var(--mut);border-top:1px dashed var(--bd);margin-top:8px;padding-top:6px}
+.filters{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:14px 0}select,input.f{padding:9px 11px;border:1px solid var(--bd);border-radius:11px;background:var(--card);width:100%}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--bd);margin:18px 0;overflow-x:auto}.tabs button{background:none;border:0;padding:10px 14px;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}.tabs button.on{color:var(--ac);border-color:var(--ac);font-weight:600}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--bd)}th{color:var(--mut);font-weight:500;font-size:13px}.scroll{overflow-x:auto}
+.b-a{color:var(--rd)}.b-t{color:var(--warn)}.b-s{color:var(--ok)}
+.bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:99px;display:flex;gap:12px;align-items:center;z-index:6}
+</style></head><body>
+<nav id="nav"></nav><main id="app"></main>
+<footer>CollegeSaathi AI · Free counselling for AKTU colleges · Demo build: all figures below are placeholders, not verified data.</footer>
+<script>
+/* ===== SERVICE LAYER (swap bodies for real API calls) ===== */
+const Svc={
+ // GET /api/colleges
+ async colleges(){return COLLEGES},
+ // POST /api/counsellor {message, history} -> {answer, sources[], collegeIds[]}
+ async ask(q){await new Promise(r=>setTimeout(r,900));const ql=q.toLowerCase();
+  let hits=COLLEGES.filter(c=>ql.includes(c.city.toLowerCase())||ql.includes(c.short.toLowerCase()));
+  if(/hostel/.test(ql))hits=COLLEGES.filter(c=>c.hostel);
+  if(/cheap|budget|low fee|affordable/.test(ql))hits=[...COLLEGES].sort((a,b)=>a.fee-b.fee).slice(0,3);
+  if(/placement|package/.test(ql))hits=[...COLLEGES].sort((a,b)=>b.med-a.med).slice(0,3);
+  if(!hits.length)hits=COLLEGES.slice(0,3);hits=hits.slice(0,3);
+  return{answer:`Here are ${hits.length} AKTU colleges that match your question. These come from the demo dataset, so please confirm fees, cutoffs and placements on each college's official site and the UPTAC/AKTU notices before deciding.`,sources:hits.map(c=>c.web?{t:c.short+" official site",u:c.web}:{t:c.short+" (link pending)"}).concat([{t:"Demo dataset — not verified"}]),ids:hits.map(c=>c.id)}},
+ // GET /api/cutoffs?rank&category&branch
+ cutoffs(rank,cat,branch){const f={General:1,OBC:1.6,SC:4.5,ST:9,EWS:1.3}[cat]||1;
+  return COLLEGES.filter(c=>c.close[branch]).map(c=>{const cl=c.close[branch]*f,r=rank/cl;
+   const tier=r<=.8?"Safer":r<=1.1?"Target":r<=1.5?"Ambitious":null;return tier&&{c,cl:Math.round(cl),tier}}).filter(Boolean)}
+};
+/* ===== DEMO DATA — placeholder numbers, NOT verified. Replace via Svc.colleges() ===== */
+const D="2025 (demo)";
+const COLLEGES=[
+{id:"kiet",short:"KIET",name:"KIET Group of Institutions",city:"Ghaziabad",web:"https://kiet.edu",hostel:1,fee:150000,hf:90000,med:600000,avg:700000,branches:["CSE","IT","ECE","ME"],close:{CSE:9000,IT:14000,ECE:24000,ME:60000}},
+{id:"akgec",short:"AKGEC",name:"Ajay Kumar Garg Engineering College",city:"Ghaziabad",web:"https://akgec.ac.in",hostel:1,fee:140000,hf:85000,med:550000,avg:650000,branches:["CSE","IT","ECE","ME"],close:{CSE:11000,IT:16000,ECE:28000,ME:65000}},
+{id:"iet",short:"IET Lucknow",name:"Institute of Engineering & Technology",city:"Lucknow",web:"https://ietlucknow.ac.in",hostel:1,fee:90000,hf:50000,med:700000,avg:800000,branches:["CSE","ECE","ME","CE"],close:{CSE:3500,ECE:9000,ME:20000,CE:30000}},
+{id:"hbtu",short:"HBTU",name:"Harcourt Butler Technical University",city:"Kanpur",web:"https://hbtu.ac.in",hostel:1,fee:95000,hf:45000,med:650000,avg:750000,branches:["CSE","ECE","ME","CE"],close:{CSE:4500,ECE:11000,ME:24000,CE:35000}},
+{id:"jss",short:"JSSATE",name:"JSS Academy of Technical Education",city:"Noida",web:"https://jssaten.ac.in",hostel:1,fee:135000,hf:95000,med:500000,avg:600000,branches:["CSE","IT","ECE","ME"],close:{CSE:15000,IT:20000,ECE:32000,ME:70000}},
+{id:"biet",short:"BIET",name:"Bundelkhand Institute of Engineering & Technology",city:"Jhansi",web:"",hostel:1,fee:85000,hf:40000,med:400000,avg:480000,branches:["CSE","ECE","ME","CE"],close:{CSE:22000,ECE:40000,ME:80000,CE:90000}}];
+/* ===== THEME (single source of truth) ===== */
+const Theme=(()=>{const K="cs_theme",R=document.documentElement;let T,tm;
+ function sys(){return matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}
+ function read(){try{const v=localStorage.getItem(K);if(v==="dark"||v==="light")return v}catch(e){}return null}
+ function icon(){return T==="dark"?"☀":"☾"}
+ function apply(t,anim){T=t;if(anim){R.classList.add("theming");clearTimeout(tm);tm=setTimeout(()=>R.classList.remove("theming"),350)}R.dataset.theme=t;const b=document.getElementById("themeBtn");if(b){b.textContent=icon();b.setAttribute("aria-pressed",String(t==="dark"))}}
+ function toggle(){const n=T==="dark"?"light":"dark";apply(n,true);try{localStorage.setItem(K,n)}catch(e){}}
+ T=read()||R.dataset.theme||sys();apply(T,false);
+ // The theme changes ONLY via the dedicated toggle button (data-theme-toggle), handled in the single delegated click handler below.
+ addEventListener("storage",e=>{if(e.key===K&&(e.newValue==="dark"||e.newValue==="light"))apply(e.newValue,true)});
+ return{toggle,icon,get:()=>T}})();
+/* ===== STATE ===== */
+const S={short:load("sh",[]),cmp:load("cp",[]),q:"",city:"",branch:"",hostel:"",maxFee:"",minPkg:"",sort:"name",tab:"Overview",chats:[{t:"New conversation",m:[]}],ci:0,busy:false,res:null};
+function load(k,d){try{return JSON.parse(localStorage.getItem("cs_"+k))||d}catch(e){return d}}
+function save(){try{localStorage.setItem("cs_sh",JSON.stringify(S.short));localStorage.setItem("cs_cp",JSON.stringify(S.cmp))}catch(e){}}
+const $=s=>document.querySelector(s),inr=n=>"₹"+(n/100000).toFixed(1)+"L",E=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const by=id=>COLLEGES.find(c=>c.id===id);
+const badge=`<span class="tag demo">Demo data · not verified</span>`;
+/* ===== COMPONENTS ===== */
+function cCard(c){const s=S.short.includes(c.id),k=S.cmp.includes(c.id);
+ return `<div class="card"><div class="row"><h3 style="flex:1"><a href="#college-${c.id}" style="color:inherit;text-decoration:none">${E(c.name)}</a></h3><button class="ib" data-sh="${c.id}" title="Shortlist" aria-label="Shortlist">${s?"★":"☆"}</button></div>
+ <div class="mut">📍 ${c.city} · AKTU affiliated</div><div style="margin:10px 0">${c.branches.map(b=>`<span class="tag">${b}</span>`).join("")}</div>
+ <div class="row mut"><span>Fee ~${inr(c.fee)}/yr</span><span>·</span><span>Median ~${inr(c.med)}</span></div><div style="margin:8px 0">${badge}</div>
+ <div class="row"><a class="btn g" href="#college-${c.id}">Details</a><label class="chip ${k?"on":""}" style="cursor:pointer"><input type="checkbox" data-cmp="${c.id}" ${k?"checked":""} hidden>${k?"✓ Comparing":"+ Compare"}</label></div></div>`}
+function verified(c){return `<p class="mut">Official website: ${c.web?`<a href="${c.web}" target="_blank" rel="noopener">${c.web.replace("https://","")}</a>`:"link pending"} · Academic year: ${D} · Last verified: <b>not verified</b></p>`}
+/* ===== PAGES ===== */
+const P={
+home(){return `<section class="hero"><h1>Find Your Dream College <span>with AI</span></h1><p>Free, unbiased counselling for AKTU-affiliated colleges in Uttar Pradesh.</p>
+ <form class="sb" data-ask><input name="q" placeholder="Ask anything… e.g. Best CSE colleges in Ghaziabad with hostel" aria-label="Ask AI"><button class="btn">Ask AI</button></form>
+ <div class="chips">${["Best CSE colleges in Ghaziabad","Low fee colleges with hostel","Top placements in Lucknow","Colleges for rank 12000"].map(s=>`<span class="chip" data-ask-q="${s}">${s}</span>`).join("")}</div></section>
+ <h2>Featured AKTU colleges</h2><div class="grid">${COLLEGES.slice(0,3).map(cCard).join("")}</div>
+ <h2>Popular searches</h2><div class="row">${["CSE Noida","ECE Lucknow","Low fee Kanpur","Hostel Ghaziabad"].map(s=>`<span class="chip" data-go="explore" data-ex="${s}">${s}</span>`).join("")}</div>
+ <h2>How it works</h2><div class="grid steps"><div class="card"><h3>Ask or enter your rank</h3><p class="mut">Describe what you want in plain language, or use the cutoff checker.</p></div><div class="card"><h3>Get sourced answers</h3><p class="mut">Every answer shows sources and how fresh the data is.</p></div><div class="card"><h3>Compare &amp; shortlist</h3><p class="mut">Put 2–4 colleges side by side and save your shortlist.</p></div></div>`},
+chat(){const ch=S.chats[S.ci];
+ return `<div class="layout"><div class="side"><button class="btn" data-newchat>+ New chat</button>${S.chats.map((c,i)=>`<div class="it ${i==S.ci?"on":""}" data-ci="${i}">${E(c.t)}</div>`).join("")}</div>
+ <div class="chat"><div class="msgs" id="msgs">${ch.m.length?"":`<div class="mut" style="margin:auto;text-align:center"><h3 style="color:var(--tx)">How can I help?</h3><div class="chips">${["Best CSE colleges in Ghaziabad","Affordable colleges with hostel","Top placements in Lucknow"].map(s=>`<span class="chip" data-ask-q="${s}">${s}</span>`).join("")}</div></div>`}
+ ${ch.m.map(m=>m.u?`<div class="m u">${E(m.u)}</div>`:`<div class="m a">${E(m.a)}<div class="cite">Sources: ${m.s.map(x=>x.u?`<a href="${x.u}" target="_blank" rel="noopener">${E(x.t)}</a>`:E(x.t)).join(" · ")}</div>${m.ids.map(i=>`<div class="card" style="margin-top:8px;padding:12px"><b>${by(i).name}</b><div class="mut">${by(i).city} · <a href="#college-${i}">View details</a></div></div>`).join("")}</div>`).join("")}
+ ${S.busy?`<div class="m a dots"><span></span><span></span><span></span></div>`:""}</div>
+ <form class="sb" data-ask style="margin:12px;max-width:none"><input name="q" placeholder="Ask the counsellor…"><button class="btn">Send</button></form></div></div>`},
+explore(){let l=COLLEGES.filter(c=>(c.name+c.city+c.short).toLowerCase().includes(S.q.toLowerCase())&&(!S.city||c.city===S.city)&&(!S.branch||c.branches.includes(S.branch))&&(!S.hostel||c.hostel)&&(!S.maxFee||c.fee<=+S.maxFee)&&(!S.minPkg||c.med>=+S.minPkg));
+ l.sort((a,b)=>S.sort==="fee"?a.fee-b.fee:S.sort==="pkg"?b.med-a.med:a.name.localeCompare(b.name));
+ const o=(a,v)=>a.map(x=>`<option ${x==v?"selected":""}>${x}</option>`).join("");
+ return `<h1 style="font-size:36px">College Explorer</h1><input class="f" data-f="q" placeholder="Search colleges or cities…" value="${E(S.q)}">
+ <div class="filters"><select data-f="city"><option value="">All cities</option>${o([...new Set(COLLEGES.map(c=>c.city))],S.city)}</select><select data-f="branch"><option value="">All branches</option>${o(["CSE","IT","ECE","ME","CE"],S.branch)}</select>
+ <select data-f="maxFee"><option value="">Any fee</option><option value="100000" ${S.maxFee=="100000"?"selected":""}>Up to ₹1L/yr</option><option value="140000" ${S.maxFee=="140000"?"selected":""}>Up to ₹1.4L/yr</option></select>
+ <select data-f="minPkg"><option value="">Any placement</option><option value="500000" ${S.minPkg=="500000"?"selected":""}>Median ₹5L+</option><option value="600000" ${S.minPkg=="600000"?"selected":""}>Median ₹6L+</option></select>
+ <select data-f="hostel"><option value="">Hostel: any</option><option value="1" ${S.hostel?"selected":""}>Hostel available</option></select>
+ <select data-f="sort"><option value="name">Sort: Name</option><option value="fee" ${S.sort=="fee"?"selected":""}>Lowest fee</option><option value="pkg" ${S.sort=="pkg"?"selected":""}>Highest placement</option></select></div>
+ <p class="mut">${l.length} colleges · ${S.short.length} shortlisted</p><div class="grid">${l.map(cCard).join("")||"<p>No colleges match these filters.</p>"}</div>`},
+college(id){const c=by(id);if(!c)return "<p>College not found.</p>";const T=["Overview","Fees","Placements","Cutoffs","Hostel/Campus"];
+ const body={Overview:`<p>${E(c.name)} is an AKTU-affiliated college in ${c.city}.</p><div>${c.branches.map(b=>`<span class="tag">${b}</span>`).join("")}</div>`,
+ Fees:`<table><tr><th>Item</th><th>Approx. per year</th></tr><tr><td>Tuition</td><td>${inr(c.fee)}</td></tr></table>`,
+ Placements:`<table><tr><th>Metric</th><th>Value</th></tr><tr><td>Median package</td><td>${inr(c.med)}</td></tr><tr><td>Average package</td><td>${inr(c.avg)}</td></tr></table>`,
+ Cutoffs:`<div class="scroll"><table><tr><th>Branch</th><th>Closing rank (General)</th><th>Year</th></tr>${Object.entries(c.close).map(([b,r])=>`<tr><td>${b}</td><td>${r.toLocaleString("en-IN")}</td><td>${D}</td></tr>`).join("")}</table></div>`,
+ "Hostel/Campus":`<p>Hostel: ${c.hostel?"Available":"Not listed"}. Approx. hostel cost: ${inr(c.hf)}/yr.</p>`}[S.tab];
+ return `<a href="#explore">← Back</a><div class="row" style="margin-top:8px"><h1 style="font-size:34px;flex:1;margin:0">${E(c.name)}</h1><button class="ib" data-sh="${c.id}">${S.short.includes(c.id)?"★ Shortlisted":"☆ Shortlist"}</button></div>
+ <p class="mut">📍 ${c.city}</p>${badge}${verified(c)}<div class="tabs">${T.map(t=>`<button class="${t==S.tab?"on":""}" data-tab="${t}">${t}</button>`).join("")}</div><div class="card">${body}</div>`},
+cutoff(){const r=S.res;
+ return `<h1 style="font-size:36px">Cutoff Checker</h1><p class="mut">Historical options only — not a prediction or guarantee. Check the official UPTAC/AKTU notices.</p>
+ <form class="card" data-cut><div class="filters"><input class="f" name="rank" type="number" min="1" required placeholder="JEE Main rank"><select name="cat">${["General","OBC","SC","ST","EWS"].map(x=>`<option>${x}</option>`).join("")}</select><select name="branch">${["CSE","IT","ECE","ME","CE"].map(x=>`<option>${x}</option>`).join("")}</select><select name="city"><option value="">Any city</option>${[...new Set(COLLEGES.map(c=>c.city))].map(x=>`<option>${x}</option>`).join("")}</select></div><button class="btn">Check options</button></form>
+ ${r?`<h2>Results</h2>${badge}<div class="grid" style="margin-top:12px">${r.length?r.map(x=>`<div class="card"><b class="${{Safer:"b-s",Target:"b-t",Ambitious:"b-a"}[x.tier]}">${x.tier}</b><h3><a href="#college-${x.c.id}">${E(x.c.name)}</a></h3><div class="mut">${x.c.city}</div><p>Closing rank ≈ ${x.cl.toLocaleString("en-IN")} (${D})</p><p class="mut">${x.tier==="Safer"?"Your rank is comfortably better than the historical closing rank.":x.tier==="Target"?"Your rank is close to the historical closing rank.":"Your rank is behind the historical closing rank; possible only if cutoffs shift."}</p></div>`).join(""):"<p>No options found for these inputs.</p>"}</div>`:""}`},
+compare(){const l=S.cmp.map(by).filter(Boolean);if(l.length<2)return `<h1 style="font-size:36px">Compare Colleges</h1><p>Select 2–4 colleges in the <a href="#explore">Explorer</a> to compare. Selected: ${l.length}</p>`;
+ const rows=[["City",c=>c.city],["Tuition / yr",c=>inr(c.fee)],["Hostel cost / yr",c=>c.hostel?inr(c.hf):"—"],["Median package",c=>inr(c.med)],["Average package",c=>inr(c.avg)],["Branches",c=>c.branches.join(", ")],["Closing rank (CSE)",c=>c.close.CSE.toLocaleString("en-IN")],["Website",c=>c.web?`<a href="${c.web}" target="_blank" rel="noopener">Official site</a>`:"pending"]];
+ return `<h1 style="font-size:36px">Compare Colleges</h1>${badge}<div class="scroll card" style="margin-top:14px"><table><tr><th></th>${l.map(c=>`<th><a href="#college-${c.id}">${E(c.short)}</a> <button class="ib" data-cmpx="${c.id}">✕</button></th>`).join("")}</tr>${rows.map(([n,f])=>`<tr><th>${n}</th>${l.map(c=>`<td>${f(c)}</td>`).join("")}</tr>`).join("")}</table></div>`}
+};
+/* ===== ROUTER ===== */
+const NAV=[["home","Home"],["chat","AI Counsellor"],["explore","Explorer"],["cutoff","Cutoffs"],["compare","Compare"]];
+function route(){const h=location.hash.slice(1)||"home";let k=h,html;
+ if(h.startsWith("college-")){html=P.college(h.slice(8));k="explore"}else html=(P[h]||P.home)();
+ $("#nav").innerHTML=`<a class="logo" href="#home">College<b>Saathi</b> AI</a>${NAV.map(([i,n])=>`<a class="l ${i==k?"on":""}" href="#${i}">${n}${i=="compare"&&S.cmp.length?` (${S.cmp.length})`:""}</a>`).join("")}<span class="sp"></span><button class="ib" id="themeBtn" data-theme-toggle aria-label="Toggle theme" aria-pressed="${Theme.get()==="dark"}">${Theme.icon()}</button>`;
+ $("#app").innerHTML=html;$("#app").style.animation="none";$("#app").offsetHeight;$("#app").style.animation="";
+ const m=$("#msgs");if(m)m.scrollTop=m.scrollHeight}
+async function ask(q){if(!q.trim()||S.busy)return;const ch=S.chats[S.ci];if(!ch.m.length)ch.t=q.slice(0,28);ch.m.push({u:q});S.busy=true;location.hash="chat";route();
+ const r=await Svc.ask(q);ch.m.push({a:r.answer,s:r.sources,ids:r.ids});S.busy=false;route()}
+/* ===== EVENTS ===== */
+document.addEventListener("click",e=>{const t=e.target.closest("[data-sh],[data-cmpx],[data-ask-q],[data-tab],[data-ci],[data-newchat],[data-theme-toggle],[data-go]");if(!t)return;const d=t.dataset;
+ if(d.sh){const a=S.short,i=a.indexOf(d.sh);i<0?a.push(d.sh):a.splice(i,1);save();route()}
+ else if(d.cmpx){S.cmp=S.cmp.filter(x=>x!==d.cmpx);save();route()}
+ else if(d.askQ)ask(d.askQ);else if(d.tab){S.tab=d.tab;route()}
+ else if(d.ci!==undefined){S.ci=+d.ci;route()}else if(d.newchat!==undefined){S.chats.push({t:"New conversation",m:[]});S.ci=S.chats.length-1;route()}
+ else if(d.go){S.q=d.ex.split(" ")[0]==="CSE"||/Low|Hostel/.test(d.ex)?"":d.ex.split(" ").pop();location.hash=d.go}
+ else if(d.themeToggle!==undefined)Theme.toggle()});
+document.addEventListener("change",e=>{const t=e.target;if(t.dataset.cmp){const a=S.cmp,i=a.indexOf(t.dataset.cmp);if(i<0){if(a.length>=4){alert("You can compare up to 4 colleges.");t.checked=false;return}a.push(t.dataset.cmp)}else a.splice(i,1);save();route()}
+ else if(t.dataset.f){S[t.dataset.f]=t.dataset.f==="hostel"?t.value:t.value;route()}});
+document.addEventListener("input",e=>{if(e.target.dataset.f==="q"){S.q=e.target.value;const p=e.target.selectionStart;route();const i=$('[data-f="q"]');i.focus();i.setSelectionRange(p,p)}});
+document.addEventListener("submit",e=>{e.preventDefault();const f=e.target;
+ if(f.matches("[data-ask]")){const q=f.q.value;f.reset();ask(q)}
+ else if(f.matches("[data-cut]")){let r=Svc.cutoffs(+f.rank.value,f.cat.value,f.branch.value);if(f.city.value)r=r.filter(x=>x.c.city===f.city.value);S.res=r.sort((a,b)=>a.cl-b.cl);route()}});
+addEventListener("hashchange",()=>{route();scrollTo(0,0)});route();
+</script></body></html>
