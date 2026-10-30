@@ -1,0 +1,10 @@
+[
+  {
+    "id": "example-college",
+    "name": "EXAMPLE - replace with real college name",
+    "aliases": ["short name students use"],
+    "domains": ["college-official-domain.edu.in"],
+    "aktu_affiliation_source": "URL of AKTU affiliation list/PDF proving affiliation",
+    "affiliation_verified": false
+  }
+]
